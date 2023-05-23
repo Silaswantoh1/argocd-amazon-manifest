@@ -4,7 +4,7 @@ node {
     env.IMAGE = 'silas-app'
 
     stage('Clone repository') {
-             git branch: 'main', url: 'https://github.com/ooghenekaro/argocd-amazon-manifest.git'  
+             git branch: 'main', url: 'https://github.com/Silaswantoh1/argocd-amazon-manifest.git'  
     }
 
     stage('Update GIT') {
