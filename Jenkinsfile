@@ -1,7 +1,7 @@
 node {
     def app
     
-    env.IMAGE = 'dom-app'
+    env.IMAGE = 'swantoh1/dom-app'
 
     stage('Clone repository') {
              git branch: 'main', url: 'https://github.com/Silaswantoh1/argocd-amazon-manifest.git'  
@@ -12,7 +12,7 @@ node {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'silas-github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //script {def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')}
-                        //script  {def IMAGE='ooghenekaro/amazon'}
+                        //script  {def IMAGE='swantoh1/dom-app'}
                         sh "git config user.email wantohsilas@gmail.com"
                         sh "git config user.name Silaswantoh1"
                         //sh "git switch master"
